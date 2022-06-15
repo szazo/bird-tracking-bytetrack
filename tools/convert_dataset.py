@@ -9,7 +9,7 @@ def make_parser():
     parser.add_argument('-i', '--input', required=True, default=None, type=str, help='input file')
     parser.add_argument('-o', '--output', required=True, default=None, type=str, help='output file')
     parser.add_argument('-d', '--data-dir', default='data', type=str, help='The data directory of the images')
-    parser.add_argument('--coco-categories', action=argparse.BooleanOptionalAction, help='Use COCO categories in output')
+    parser.add_argument('--coco-categories', action='store_true', help='Use COCO categories in output')
     parser.add_argument('-t', '--target-category', default=None, type=int, help='Replace category of the boxes')
 
     return parser
