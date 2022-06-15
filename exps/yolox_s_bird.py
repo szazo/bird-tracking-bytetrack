@@ -24,8 +24,8 @@ class Exp(MyExp):
         # dataloader config
         self.input_size = (640, 640)
         self.random_size = (18, 32)
-        self.train_ann = "annotations_traino.json"
-        self.val_ann = "annotations_valo.json"
+        self.train_ann = "annotations_traino_preprocessed.json"
+        self.val_ann = "annotations_valo_preprocessed.json"
 
         # training config
 #        self.max_epoch = 80
