@@ -28,13 +28,15 @@ class Exp(MyExp):
         self.val_ann = "annotations_valo.json"
 
         # training config
-        self.max_epoch = 80
+#        self.max_epoch = 80
+        self.max_epoch = 5
         self.warmup_epochs = 1
         self.basic_lr_per_img = 0.001 / 64.0
         self.no_aug_epochs = 10
 
         self.print_interval = 20
-        self.eval_interval = 5
+#        self.eval_interval = 5
+        self.eval_interval = 1
         
         # testing config
         self.test_size = (640, 640)
