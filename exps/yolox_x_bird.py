@@ -14,10 +14,10 @@ class Exp(MyExp):
 
         # model config
         self.num_classes = 80
-#        self.depth = 1.33
-#        self.width = 1.25
-        self.depth = 0.33
-        self.width = 0.50
+        self.depth = 1.33
+        self.width = 1.25
+#        self.depth = 0.33
+#        self.width = 0.50
         
         self.exp_name = os.path.split(os.path.realpath(__file__))[1].split(".")[0]
         print('exp name', self.exp_name)
@@ -28,13 +28,13 @@ class Exp(MyExp):
         self.val_ann = "annotations_valo.json"
 
         # training config
-        self.max_epoch = 80
+        self.max_epoch = 5
         self.warmup_epochs = 1
         self.basic_lr_per_img = 0.001 / 64.0
         self.no_aug_epochs = 10
 
         self.print_interval = 20
-        self.eval_interval = 5
+        self.eval_interval = 2
         
         # testing config
         self.test_size = (640, 640)
