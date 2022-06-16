@@ -11,14 +11,13 @@ class Exp(MyExp):
     def __init__(self):
         super(Exp, self).__init__()
 
-
         # model config
         self.num_classes = 80
         self.depth = 1.33
         self.width = 1.25
         
         self.exp_name = os.path.split(os.path.realpath(__file__))[1].split(".")[0]
-        print('exp name', self.exp_name)
+
         # dataloader config
         self.input_size = (640, 640)
         self.random_size = (18, 32)
