@@ -48,12 +48,15 @@ for annotation in ds['annotations']:
 
 input_images = coco.loadImgs(image_ids)
 images = []
+image_index = 0
 for image in input_images:
     file_name = image['file_name']
     tail = path.split(file_name)[1]
     file_name = path.join(data_dir, tail)
     image['file_name'] = file_name
+    image['frame_id'] = image_index + 1 # image number in the video sequence, starting from 1
     images.append(image)
+    image_index += 1
     #break
 
 out = {
