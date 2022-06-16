@@ -38,6 +38,7 @@ image_ids = []
 for annotation in ds['annotations']:
     if args.target_category is not None:
         annotation['category_id'] = args.target_category
+    annotation['track_id'] = -1
     annotations.append(annotation)
 
     image_id = annotation['image_id']
