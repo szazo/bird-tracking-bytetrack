@@ -41,7 +41,7 @@ class Exp(MyExp):
 
     def get_data_loader(self, batch_size, is_distributed, no_aug=False):
         from yolox.data import (
-            COCODataset,
+            MOTDataset,
             TrainTransform,
             YoloBatchSampler,
             DataLoader,
