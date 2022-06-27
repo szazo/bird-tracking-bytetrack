@@ -11,6 +11,7 @@ def make_parser():
     parser.add_argument('-d', '--data-dir', default='data', type=str, help='The data directory of the images')
     parser.add_argument('--coco-categories', action='store_true', help='Use COCO categories in output')
     parser.add_argument('-t', '--target-category', default=None, type=int, help='Replace category of the boxes')
+    parser.add_argument('--category-as-track_id', action='store_true', help='Use category_id as track_id that can be used for MOT evaluation')
 
     return parser
 
@@ -29,6 +30,7 @@ categories = ds['categories']
 if args.coco_categories:
     categories = coco_categories
 
+use_category_as_track_id = args.category_as_track_id
 #counts = dataset.count_values("ground_truth.detections.label")
 
 # https://stackoverflow.com/questions/60227833/how-to-filter-coco-dataset-classes-annotations-for-custom-dataset
@@ -36,9 +38,12 @@ if args.coco_categories:
 annotations = []
 image_ids = []
 for annotation in ds['annotations']:
+    current_category_id = annotation['category_id']
     if args.target_category is not None:
         annotation['category_id'] = args.target_category
-    annotation['track_id'] = -1
+
+    track_id = current_category_id if use_category_as_track_id else -1
+    annotation['track_id'] = track_id
     annotations.append(annotation)
 
     image_id = annotation['image_id']
