@@ -47,7 +47,8 @@ for annotation in ds['annotations']:
     annotations.append(annotation)
 
     image_id = annotation['image_id']
-    image_ids.append(image_id)
+    if image_id not in image_ids:
+        image_ids.append(image_id)
     #break
 
 
