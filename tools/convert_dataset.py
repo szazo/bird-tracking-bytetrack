@@ -91,7 +91,6 @@ for image in input_images:
 for gt in ground_truth:
     image_id = gt['image_id']
     image = next(image for image in images if image['id'] == image_id)
-    print('frame', image['frame_id'])
     gt['frame'] = image['frame_id']
 
 out = {
