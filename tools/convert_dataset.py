@@ -94,8 +94,6 @@ for gt in ground_truth:
     print('frame', image['frame_id'])
     gt['frame'] = image['frame_id']
 
-print('ground', ground_truth)
-
 out = {
     'info': ds['info'],
     'licenses': ds['licenses'],
@@ -104,21 +102,9 @@ out = {
     'categories': categories
 }
 
-#print(out)
-
 with open(out_filepath, 'w') as f:
     json.dump(out, f, indent=4)
 
-#anns = ds['annotations']
-#print(len(anns))
-#print(anns)
-
-#for ann in anns:
-#    print(ann)
-#print(counts)
-
-#session = fo.launch_app(dataset)
-print(len(coco_categories))
 # write ground truth
 if gt_out_filepath is not None:
 
