@@ -29,3 +29,15 @@ Parameters:
   * `--category-as-track_id`: if set, COCO `category_id` will be used as `track_id`. It can be used when the different moving objects are categorized separately.
   * `--coco-categories`: if set, include COCO categories in the output file
   * `--target-category`: set the annotations' category to this category (`16` is the `bird`)
+
+## Experiment files
+
+The `exps` directory contains the experiment files which can be used for ByteTrack (and YOLOX) training, evaluation and tracking.
+
+They contain model parameters and dataloading, training and evaluation configs.
+
+  * `yolox_s_bird.py`: for training YOLOX with small network
+  * `yolox_x_bird.py`: for training YOLOX with larger network
+  * `bytetrack_x_bird.py`: for training ByteTrack with larger network
+
+NOTE: if you use ByteTrack with pretrained YOLOX weight, use the weights from YOLOX `0.1.0` release (git tag), because ByteTrack is currently based on that revision.
