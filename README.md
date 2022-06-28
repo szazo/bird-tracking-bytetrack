@@ -1,8 +1,8 @@
 # Bird tracking using ByteTrack
 
-This repo contains tools and experiment files used for tracking birds in a cage using ByteTrack.
+This repo contains tools and experiment files used for tracking birds in a cage using [ByteTrack](https://github.com/ifzhang/ByteTrack).
 
-ByteTrack's is codebase is based on YOLOX, and for this reason, YOLOX pretrained weights can be used for tracking with ByteTrack.
+ByteTrack's is codebase is based on [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX) object detector, and for this reason, YOLOX pretrained weights can be used for tracking with ByteTrack.
 
 ## Dataset converter
 
@@ -11,19 +11,19 @@ Under `tools` there's `convert_dataset.py` that can be used to convert dataset f
 Example:
 
 ```
-!python3 convert_dataset.py \
-         --category-as-track_id
-         --coco-categories \
-         --target-category 16 \
+python3 convert_dataset.py \
          --input birds/annotations/annotations_val.json \
          --output birds/annotations/annotations_valo_preprocessed.json \
          --data-dir data \
-         --ground-truth-output ByteTrack/datasets/mot/train/data/gt/gt.txt
+         --ground-truth-output ByteTrack/datasets/mot/train/data/gt/gt.txt \
+         --category-as-track_id \
+         --coco-categories \
+         --target-category 16
 ```
 
 Parameters:
   * `--input`: the input COCO file
-  * '--output': the output generated file
+  * `--output`: the output generated file
   * `--data-dir`: fix the images' path using the provided directory
   * `--ground-truth-output`: the path of ByteTrack compatible ground truth file that can be used for validation
   * `--category-as-track_id`: if set, COCO `category_id` will be used as `track_id`. It can be used when the different moving objects are categorized separately.
