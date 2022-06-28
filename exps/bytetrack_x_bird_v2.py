@@ -26,7 +26,7 @@ class Exp(MyExp):
         self.val_ann = "annotations_valo_preprocessed.json"
 
         # training config
-        self.max_epoch = 5
+        self.max_epoch = 10
         self.warmup_epochs = 1
         self.basic_lr_per_img = 0.001 / 64.0
         self.no_aug_epochs = 10
