@@ -23,8 +23,8 @@ python3 convert_dataset.py \
 
 Parameters:
   * `--input`: the input COCO file
-  * `--output`: the output generated file
-  * `--data-dir`: fix the images' path using the provided directory
+  * `--output`: the output COCO file
+  * `--data-dir`: fix the image file paths in the JSON using the provided directory
   * `--ground-truth-output`: the path of ByteTrack compatible ground truth file that can be used for validation
   * `--category-as-track_id`: if set, COCO `category_id` will be used as `track_id`. It can be used when the different moving objects are categorized separately.
   * `--coco-categories`: if set, include COCO categories in the output file
